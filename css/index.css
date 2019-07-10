@@ -104,6 +104,9 @@
   padding: 30px 0;
   text-align: center;
 }
+
+/* changed width of menu to transition from 0px to 350px */
+/* changed opacity of menu to transition from 0 to 1 */
 .menu--open {
   width: 350px;
   opacity: 1;
