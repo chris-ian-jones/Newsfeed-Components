@@ -6,7 +6,8 @@ let menuItems = [
   "What's New",
   'Tech Trends',
   'Music',
-  'Log Out'
+  'Log Out',
+  'Test'
 ];
 
 // let newArray = [1,2,3]
@@ -37,30 +38,37 @@ let menuItems = [
 */
 
 function createMenu(){
+  // create new menu elements
   const menuContainer = document.createElement('div')
   const menuUnorderedList = document.createElement('ul')
 
+  // add class for css styling to menuContainer div
   menuContainer.classList.add('menu')
 
+  // grab the header div
   const headerDiv = document.querySelector('.header')
-  // console.log(headerDiv)
+
+  // append the menuContainer as child of header div
   headerDiv.appendChild(menuContainer)
-
+  // append unordered list element as child of menuContainer 
   menuContainer.appendChild(menuUnorderedList)
-
+  
+  // iterate over array of menu items, for each item:
+  // create a new li element
+  // add the arrays item as text content to new li element
+  // then append the li element as last child to unordered list element
   menuItems.forEach(item => {
     const menuListItem = document.createElement('li')
     menuListItem.textContent = item
     menuUnorderedList.appendChild(menuListItem)    
   })
-  // console.log(menuContainer)
+ 
+  // grab the menu button element
   const menuButton = document.querySelector('img.menu-button')
-  // console.log(menuButton)
+  // add event listener to toggle the class of menu--open on menu container, when menu button is clicked
   menuButton.addEventListener('click', event => {
     menuContainer.classList.toggle('menu--open')
   })
-  // return menuContainer
-  // console.log(menuContainer)
 }
 
 createMenu()
