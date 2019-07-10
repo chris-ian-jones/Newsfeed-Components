@@ -9,7 +9,7 @@ let menuItems = [
   'Log Out'
 ];
 
-let newArrray = [1,2,3]
+// let newArray = [1,2,3]
 
 /* 
 
@@ -40,6 +40,12 @@ function createMenu(){
   const menuContainer = document.createElement('div')
   const menuUnorderedList = document.createElement('ul')
 
+  menuContainer.classList.add('menu')
+
+  const headerDiv = document.querySelector('.header')
+  // console.log(headerDiv)
+  headerDiv.appendChild(menuContainer)
+
   menuContainer.appendChild(menuUnorderedList)
 
   menuItems.forEach(item => {
@@ -47,7 +53,14 @@ function createMenu(){
     menuListItem.textContent = item
     menuUnorderedList.appendChild(menuListItem)    
   })
-  console.log(menuContainer)
+  // console.log(menuContainer)
+  const menuButton = document.querySelector('img.menu-button')
+  // console.log(menuButton)
+  menuButton.addEventListener('click', event => {
+    menuContainer.classList.toggle('menu--open')
+  })
+  // return menuContainer
+  // console.log(menuContainer)
 }
 
 createMenu()
