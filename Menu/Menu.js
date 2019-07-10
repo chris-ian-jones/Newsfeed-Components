@@ -43,9 +43,11 @@ function createMenu(){
   menuContainer.appendChild(menuUnorderedList)
 
   menuItems.forEach(item => {
-    console.log(item)
+    const menuListItem = document.createElement('li')
+    menuListItem.textContent = item
+    menuUnorderedList.appendChild(menuListItem)    
   })
-  // console.log(menuItems.length)
+  console.log(menuContainer)
 }
 
 createMenu()
