@@ -122,14 +122,21 @@ const data = [
 
 */
 
+
+// grab the div to contain all the articles
 const allArticlesContainer = document.querySelector('.articles')
 
+// loop through the data array, for each item in array, using createArticle function, 
+// create new component (article) whilst mapping the data from item (object) to it
+// then add new component as child to articles container
 data.forEach(articleData => {
   allArticlesContainer.appendChild(createArticle(articleData.title, articleData.date, articleData.firstParagraph, articleData.secondParagraph, articleData.thirdParagraph))
 })
 
 
 function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+
+  // create and define the html elements
   const articleContainer = document.createElement('div')
   const articleTitle = document.createElement('h2')
   const articleDate = document.createElement('p')
@@ -138,6 +145,7 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   const articleParagraphThree = document.createElement('p')
   const articleExpandButton = document.createElement('span')
 
+  // append new html elements as the children of specified node
   allArticlesContainer.appendChild(articleContainer)
   articleContainer.appendChild(articleTitle)
   articleContainer.appendChild(articleDate)
@@ -146,18 +154,20 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   articleContainer.appendChild(articleParagraphThree)
   articleContainer.appendChild(articleExpandButton)
 
+  // add class lists to elements
   articleContainer.classList.add('article')
   articleDate.classList.add('date')
   articleExpandButton.classList.add('expandButton')
 
+  // add text content to elements
   articleExpandButton.textContent = 'Expand'
-
   articleTitle.textContent = title
   articleDate.textContent = date
   articleParagraphOne.textContent = firstParagraph
   articleParagraphTwo.textContent = secondParagraph
   articleParagraphThree.textContent = thirdParagraph
 
+  // add event listener to each components 'expand span', to toggle aticle-open class when clicked
   articleExpandButton.addEventListener('click', event => {
     articleContainer.classList.toggle('article-open')
   })
