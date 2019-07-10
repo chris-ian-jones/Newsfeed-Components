@@ -125,7 +125,23 @@ function createArticle() {
   const articleParagraphThree = document.createElement('p')
   const articleExpandButton = document.createElement('span')
 
-  // console.log(articleExpandButton)
+  allArticlesContainer.appendChild(articleContainer)
+  articleContainer.appendChild(articleTitle)
+  articleContainer.appendChild(articleDate)
+  articleContainer.appendChild(articleParagraphOne)
+  articleContainer.appendChild(articleParagraphTwo)
+  articleContainer.appendChild(articleParagraphThree)
+  articleContainer.appendChild(articleExpandButton)
+
+  articleContainer.classList.add('article')
+  articleDate.classList.add('date')
+  articleExpandButton.classList.add('expandButton')
+
+  articleExpandButton.textContent = 'Expand'
+
+
+
+  console.log(articleContainer)
 }
 
 createArticle()
