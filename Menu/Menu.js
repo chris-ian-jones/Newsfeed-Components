@@ -9,6 +9,8 @@ let menuItems = [
   'Log Out'
 ];
 
+let newArrray = [1,2,3]
+
 /* 
 
   Step 1: Write a function that will create a menu component as seen below:
@@ -34,4 +36,16 @@ let menuItems = [
   
 */
 
-console.log('hello world')
+function createMenu(){
+  const menuContainer = document.createElement('div')
+  const menuUnorderedList = document.createElement('ul')
+
+  menuContainer.appendChild(menuUnorderedList)
+
+  menuItems.forEach(item => {
+    console.log(item)
+  })
+  // console.log(menuItems.length)
+}
+
+createMenu()
