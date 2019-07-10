@@ -116,7 +116,12 @@ const data = [
 const allArticlesContainer = document.querySelector('.articles')
 // console.log(articleContainer)
 
-function createArticle() {
+data.forEach(articleData => {
+  allArticlesContainer.appendChild(createArticle(articleData.title, articleData.date, articleData.firstParagraph, articleData.secondParagraph, articleData.thirdParagraph))
+})
+
+
+function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph) {
   const articleContainer = document.createElement('div')
   const articleTitle = document.createElement('h2')
   const articleDate = document.createElement('p')
@@ -139,9 +144,11 @@ function createArticle() {
 
   articleExpandButton.textContent = 'Expand'
 
+  articleTitle.textContent = title
+  articleDate.textContent = date
+  articleParagraphOne.textContent = firstParagraph
+  articleParagraphTwo.textContent = secondParagraph
+  articleParagraphThree.textContent = thirdParagraph
 
-
-  console.log(articleContainer)
+  return articleContainer
 }
-
-createArticle()
