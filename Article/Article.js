@@ -94,6 +94,15 @@ const data = [
     secondParagraph: `New second paragraph `,
 
     thirdParagraph: `New third paragraph.`
+  },
+  {
+    title: 'Another New Title',
+    date: 'Another New Date',
+    firstParagraph: `Another New first paragraph`,
+
+    secondParagraph: `Another New second paragraph `,
+
+    thirdParagraph: `Another New third paragraph.`
   }
 ];
 
